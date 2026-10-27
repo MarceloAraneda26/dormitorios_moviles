@@ -380,12 +380,12 @@
     {
       "label": "Ancho",
       "value": "3,15 m",
-      "source": "Láminas 1, 2 y 3"
+      "source": "Láminas 1, 2 y 3 (coinciden)"
     },
     {
       "label": "Largo",
       "value": "3,25 m",
-      "source": "Láminas 2 y 3 (2,55 + 0,70 en la lámina 1)"
+      "source": "Láminas 2 y 3; 2,55 + 0,70 en la lámina 1 (coinciden)"
     },
     {
       "label": "Altura junto a la cabecera",
@@ -395,18 +395,39 @@
     {
       "label": "Altura del cielo plano",
       "value": "2,25 m",
-      "source": "Lámina 3"
+      "source": "Lámina 3",
+      "precise": {
+        "priority": "media",
+        "why": "Con la pendiente indicada (1,00 m y 0,90 m en planta) daría 2,19 m: hay 6 cm de diferencia.",
+        "how": "Medir con huincha vertical desde el suelo al cielo, en el centro de la pieza, lejos de la pendiente."
+      }
     },
     {
       "label": "Pendiente del cielo",
-      "value": "≈ 29,5° · 0,88 m en planta · tramo inclinado ≈ 1,01 m",
-      "source": "Estimada: alturas medidas (1,75 y 2,25 m) con el tramo de 1,00 m y el triángulo de 0,90 m en planta",
-      "estimated": true
+      "value": "≈ 29,5° · 0,88 m en planta · tramo ≈ 1,01 m",
+      "source": "Calculada con las alturas medidas y el tramo de 1,00 m",
+      "estimated": true,
+      "precise": {
+        "priority": "media",
+        "why": "Define el ancho de la franja de techo bajo sobre la cabecera.",
+        "how": "Con una plomada o un nivel, medir en el suelo la distancia desde el muro de la cabecera hasta el punto bajo donde termina la pendiente."
+      }
     },
     {
-      "label": "Puerta",
+      "label": "Puerta: ancho",
       "value": "0,70 m",
       "source": "Láminas 1 y 3"
+    },
+    {
+      "label": "Puerta: sentido de apertura",
+      "value": "Hacia adentro, contra el muro del TV",
+      "source": "Supuesto",
+      "estimated": true,
+      "precise": {
+        "priority": "alta",
+        "why": "Decide qué esquina debe quedar libre de muebles.",
+        "how": "Abrir la puerta y anotar contra qué muro queda la hoja y dónde está la bisagra."
+      }
     },
     {
       "label": "Ventana: distancia a la esquina de la cabecera",
@@ -414,10 +435,26 @@
       "source": "Lámina 2"
     },
     {
-      "label": "Ventana: ancho, alféizar y dintel",
-      "value": "1,90 m · 0,85 m · 2,05 m",
-      "source": "Sin medir",
-      "estimated": true
+      "label": "Ventana: ancho",
+      "value": "1,90 m",
+      "source": "Supuesto a partir de las fotos",
+      "estimated": true,
+      "precise": {
+        "priority": "baja",
+        "why": "Solo afecta el dibujo de la ventana.",
+        "how": "Medir el vano de lado a lado, por dentro del marco."
+      }
+    },
+    {
+      "label": "Ventana: alféizar y dintel",
+      "value": "0,85 m · 2,05 m",
+      "source": "Supuesto",
+      "estimated": true,
+      "precise": {
+        "priority": "baja",
+        "why": "Solo afecta la vista 3D.",
+        "how": "Medir desde el suelo hasta el borde inferior y superior del vano."
+      }
     },
     {
       "label": "Cama King",
@@ -425,9 +462,70 @@
       "source": "Ficha del producto"
     },
     {
+      "label": "Cama King: grosor del respaldo",
+      "value": "8 cm",
+      "source": "Supuesto",
+      "estimated": true,
+      "precise": {
+        "priority": "alta",
+        "why": "Se descuenta del paso a los pies de la cama, que hoy da 67 cm (justo).",
+        "how": "Medir el fondo del respaldo, desde el muro hasta donde empieza el colchón."
+      }
+    },
+    {
       "label": "Aparador TV",
       "value": "1,20 × 0,50 m",
-      "source": "Medido"
+      "source": "Medido aproximado (\"unos 0,50 m\" de fondo)",
+      "precise": {
+        "priority": "alta",
+        "why": "Su fondo define el paso a los pies de la cama: cada centímetro cuenta.",
+        "how": "Medir el fondo exacto con huincha, incluyendo manillas o molduras que sobresalgan."
+      }
+    },
+    {
+      "label": "Veladores",
+      "value": "45 × 40 cm",
+      "source": "Supuesto",
+      "estimated": true,
+      "precise": {
+        "priority": "media",
+        "why": "Definen si caben a ambos lados de la cama King (quedan 67,5 cm por lado).",
+        "how": "Medir ancho y fondo de cada velador."
+      }
+    },
+    {
+      "label": "Calefactor de aceite",
+      "value": "38 × 22 cm",
+      "source": "Supuesto",
+      "estimated": true,
+      "precise": {
+        "priority": "baja",
+        "why": "Ocupa poco y se puede mover.",
+        "how": "Medir el ancho y el fondo, con las ruedas."
+      }
+    },
+    {
+      "label": "Convector bajo la ventana",
+      "value": "75 × 10 cm",
+      "source": "Supuesto",
+      "estimated": true,
+      "precise": {
+        "priority": "baja",
+        "why": "Está fijo bajo la ventana; afecta poco la distribución.",
+        "how": "Medir el largo y cuánto sobresale del muro."
+      }
+    },
+    {
+      "label": "Estante angosto",
+      "value": "40 × 25 cm",
+      "source": "Supuesto",
+      "estimated": true
+    },
+    {
+      "label": "Alturas de los muebles",
+      "value": "Veladores 55, aparador 80, calefactor 62, estante 110 cm",
+      "source": "Supuesto: solo se usan en la vista 3D",
+      "estimated": true
     }
   ],
   "notes": [

@@ -424,7 +424,7 @@
     {
       "label": "Ancho",
       "value": "1,98 m",
-      "source": "Láminas 4 y 6"
+      "source": "Láminas 4 y 6; 0,73 + 0,07 + 1,17 en la lámina 5 (coinciden)"
     },
     {
       "label": "Largo de la zona principal",
@@ -437,52 +437,119 @@
       "source": "Láminas 4 y 7"
     },
     {
+      "label": "Fondo del nicho del clóset",
+      "value": "0,61 m",
+      "source": "Lámina 5",
+      "precise": {
+        "priority": "alta",
+        "why": "3,25 − 2,50 = 0,75 m, pero el nicho mide 0,61 m: hay 14 cm sin explicar, y el espacio al pie de la cama depende de dónde queda el frente del ropero.",
+        "how": "Medir a nivel del suelo: desde el muro de la ventana hasta el frente del ropero, y desde ese frente hasta el fondo del nicho."
+      }
+    },
+    {
+      "label": "Ancho del nicho",
+      "value": "1,17 m",
+      "source": "Lámina 5"
+    },
+    {
       "label": "Altura del muro bajo",
       "value": "1,75 m",
       "source": "Láminas 4, 5 y 7"
     },
     {
-      "label": "Pendiente del cielo",
-      "value": "≈ 29,5° · 0,88 m en planta · tramo inclinado ≈ 1,01 m",
-      "source": "Estimada: alturas medidas (1,75 y 2,25 m) con el tramo de 1,00 m y el triángulo de 0,90 m en planta",
-      "estimated": true
-    },
-    {
       "label": "Altura del cielo plano",
       "value": "2,25 m",
-      "source": "Estimada: igual a la del matrimonial, que comparte el mismo techo",
-      "estimated": true
+      "source": "Supuesta igual a la del matrimonial (mismo techo)",
+      "estimated": true,
+      "precise": {
+        "priority": "media",
+        "why": "Define la altura útil y la vista 3D.",
+        "how": "Medir con huincha vertical en el centro del cielo plano."
+      }
     },
     {
-      "label": "Nicho del clóset",
-      "value": "1,17 × 0,61 m",
-      "source": "Lámina 5"
+      "label": "Pendiente del cielo",
+      "value": "≈ 29,5° · 0,88 m en planta",
+      "source": "Supuesta igual a la del matrimonial",
+      "estimated": true,
+      "precise": {
+        "priority": "baja",
+        "why": "La cama va bajo la pendiente; afecta la altura sobre ella.",
+        "how": "Medir en el suelo, con plomada, el ancho de la franja inclinada desde el muro bajo."
+      }
     },
     {
       "label": "Puerta",
-      "value": "0,73 m",
-      "source": "Lámina 5"
+      "value": "0,73 m de hoja · 0,70 m de vano",
+      "source": "Láminas 5 y 6"
+    },
+    {
+      "label": "Puerta: sentido de apertura",
+      "value": "Hacia el muro del clóset",
+      "source": "Indicado por ustedes"
     },
     {
       "label": "Ventana",
-      "value": "1,20 m, a 10 cm del muro de la puerta",
-      "source": "Medido"
+      "value": "1,20 m, a unos 10 cm del muro de la puerta",
+      "source": "Medido aproximado",
+      "precise": {
+        "priority": "media",
+        "why": "Define cuánto de la ventana queda sobre la cabecera (hoy unos 82 cm).",
+        "how": "Medir el ancho del vano y la distancia exacta a cada esquina."
+      }
     },
     {
       "label": "Ventana: alféizar y dintel",
       "value": "0,95 m · 2,00 m",
-      "source": "Sin medir",
-      "estimated": true
+      "source": "Supuesto",
+      "estimated": true,
+      "precise": {
+        "priority": "media",
+        "why": "Con la cama bajo la ventana, la altura del alféizar importa para la seguridad.",
+        "how": "Medir desde el suelo hasta el borde inferior y superior del vano."
+      }
     },
     {
       "label": "Colchón Zinus 2 plazas",
       "value": "150 × 190 × 30 cm",
-      "source": "Ficha publicada en Chile"
+      "source": "Ficha publicada en Chile",
+      "precise": {
+        "priority": "media",
+        "why": "El pasillo queda en 48 cm: 5 cm de diferencia cambian la evaluación.",
+        "how": "Revisar la etiqueta del colchón o medirlo de borde a borde."
+      }
     },
     {
       "label": "Hojas del ropero",
       "value": "55 a 60 cm (58,5 en el plano)",
-      "source": "Medido"
+      "source": "Medido aproximado",
+      "precise": {
+        "priority": "alta",
+        "why": "Al pie de la cama quedan 60 cm: con hojas de 58,5 cm sobra solo 1,5 cm, y con 60 cm no sobra nada.",
+        "how": "Medir el ancho exacto de cada hoja, de la bisagra al borde."
+      }
+    },
+    {
+      "label": "Altura del ropero",
+      "value": "1,65 m",
+      "source": "Supuesto a partir de las fotos",
+      "estimated": true,
+      "precise": {
+        "priority": "baja",
+        "why": "Solo afecta la vista 3D.",
+        "how": "Medir desde el suelo hasta la tapa del ropero."
+      }
+    },
+    {
+      "label": "Mueble bajo",
+      "value": "1,00 × 0,30 m",
+      "source": "Medido aproximado"
+    },
+    {
+      "label": "Tarima ventilada",
+      "value": "150 × 190 × 12 cm",
+      "source": "Propuesta, no existe todavía",
+      "estimated": true
     }
   ],
   "notes": [

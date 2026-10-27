@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import IsoView from "./components/IsoView";
+import Measures, { toMeasure } from "./components/Measures";
 import Photos from "./components/Photos";
 import PlanPanel from "./components/PlanPanel";
 import PlanView from "./components/PlanView";
@@ -65,6 +66,24 @@ export default function App() {
               <p className="muted">{m(r.size.w)} × {m(r.size.d)} · {r.photos.length} fotos · {r.furniture.filter((f) => f.on !== false).length} muebles</p>
             </a>
           ))}
+        </div>
+        <div className="card how">
+          <h2>Pendientes de medición</h2>
+          <p className="muted small">Medidas que conviene tomar de nuevo con más precisión, por pieza.</p>
+          <ul className="pending">
+            {ROOMS.map((r) => {
+              const list = toMeasure(r);
+              const count = (p: string) => list.filter((m) => m.precise!.priority === p).length;
+              return (
+                <li key={r.id}>
+                  <a href={`#/pieza/${r.id}/medidas`}>{r.name}</a>:{" "}
+                  <span className="badge alta">{count("alta")} alta</span> <span className="badge media">{count("media")} media</span> <span className="badge baja">{count("baja")} baja</span>
+                  <span className="muted"> · {r.measures.filter((m) => m.estimated).length} estimadas</span>
+                  <div className="muted small">Prioridad alta: {list.filter((m) => m.precise!.priority === "alta").map((m) => m.label).join(" · ") || "ninguna"}.</div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
         <div className="card how">
           <h2>Cómo agregar una pieza</h2>
@@ -140,22 +159,7 @@ export default function App() {
 
       {tab === "fotos" && <Photos room={room} />}
 
-      {tab === "medidas" && (
-        <div className="grid">
-          <div className="card">
-            <h2>Medidas</h2>
-            <table className="measures">
-              <thead><tr><th>Medida</th><th>Valor</th><th>Origen</th></tr></thead>
-              <tbody>
-                {room.measures.map((mm) => (
-                  <tr key={mm.label}><td>{mm.label}</td><td>{mm.value}{mm.estimated && <span className="badge">estimada</span>}</td><td className="muted">{mm.source}</td></tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="card"><h2>Supuestos y datos por confirmar</h2><ul className="notes">{room.notes.map((n) => <li key={n}>{n}</li>)}</ul></div>
-        </div>
-      )}
+      {tab === "medidas" && <Measures room={room} />}
 
       {tab === "detalle" && room.detail && (
         <div className="card">

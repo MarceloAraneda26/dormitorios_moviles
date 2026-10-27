@@ -62,7 +62,15 @@ export interface PhotoOverlay {
   labels: { at: Pt; value: string; note?: string }[];
 }
 export interface Photo { src: string; title: string; measures: string[]; overlay?: PhotoOverlay }
-export interface Measure { label: string; value: string; source: string; estimated?: boolean }
+// estimated: el valor no se midió (se supuso o se calculó).
+// precise: hay que medirlo mejor; dice por qué importa, cómo medirlo y con qué urgencia.
+export interface Measure {
+  label: string;
+  value: string;
+  source: string;
+  estimated?: boolean;
+  precise?: { why: string; how: string; priority: "alta" | "media" | "baja" };
+}
 
 export interface Room {
   id: string;
