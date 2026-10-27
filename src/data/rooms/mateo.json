@@ -1,0 +1,499 @@
+{
+  "id": "mateo",
+  "order": 2,
+  "name": "Habitación de Mateo",
+  "size": {
+    "w": 198,
+    "d": 325
+  },
+  "wallT": 8,
+  "ceiling": 225,
+  "ceilingEstimated": true,
+  "slope": {
+    "side": "W",
+    "low": 175,
+    "run": 88
+  },
+  "walls": {
+    "N": "muro de la ventana",
+    "S": "fondo",
+    "W": "muro del clóset",
+    "E": "muro de la puerta"
+  },
+  "doors": [
+    {
+      "name": "Puerta",
+      "hinge": [
+        198,
+        325
+      ],
+      "width": 73,
+      "closed": [
+        0,
+        -1
+      ],
+      "open": [
+        -1,
+        0
+      ],
+      "height": 205
+    }
+  ],
+  "windows": [
+    {
+      "name": "Ventana",
+      "a": [
+        68,
+        0
+      ],
+      "b": [
+        188,
+        0
+      ],
+      "sill": 95,
+      "head": 200,
+      "estimated": true
+    }
+  ],
+  "fixed": [
+    {
+      "id": "ropero",
+      "name": "el ropero",
+      "kind": "wardrobe",
+      "rect": {
+        "x": 0,
+        "y": 250,
+        "w": 117,
+        "d": 61
+      },
+      "height": 165,
+      "front": "N",
+      "leaves": [
+        {
+          "hinge": [
+            0,
+            250
+          ],
+          "r": 58.5
+        },
+        {
+          "hinge": [
+            117,
+            250
+          ],
+          "r": 58.5
+        }
+      ]
+    },
+    {
+      "id": "divisor",
+      "name": "el muro divisor",
+      "kind": "wall",
+      "rect": {
+        "x": 117,
+        "y": 250,
+        "w": 7,
+        "d": 75
+      },
+      "height": "ceiling"
+    }
+  ],
+  "zones": [
+    {
+      "name": "14 cm por confirmar",
+      "rect": {
+        "x": 0,
+        "y": 311,
+        "w": 117,
+        "d": 14
+      }
+    }
+  ],
+  "furniture": [
+    {
+      "id": "cama",
+      "type": "colchon2p",
+      "name": "Colchón",
+      "cx": 75,
+      "cy": 95,
+      "rot": 0,
+      "w": 150,
+      "d": 190
+    },
+    {
+      "id": "mb",
+      "type": "muebleBajo",
+      "cx": 183,
+      "cy": 100,
+      "rot": 90,
+      "on": false
+    }
+  ],
+  "photos": [
+    {
+      "src": "fotos/mateo/foto-4.jpg",
+      "title": "Vista hacia la ventana",
+      "measures": [
+        "1,98 m: ancho de la pieza",
+        "3,25 m: largo hasta el fondo del clóset",
+        "1,75 m: altura del muro bajo"
+      ],
+      "overlay": {
+        "lines": [
+          {
+            "a": [
+              0.4314,
+              0.3565
+            ],
+            "b": [
+              0.4402,
+              0.8143
+            ]
+          },
+          {
+            "a": [
+              0.005,
+              0.33
+            ],
+            "b": [
+              0.4208,
+              0.3734
+            ]
+          },
+          {
+            "a": [
+              0.4314,
+              0.3734
+            ],
+            "b": [
+              0.7027,
+              0.3565
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "at": [
+              0.3683,
+              0.6257
+            ],
+            "value": "1,75 m",
+            "note": "altura hasta el suelo"
+          },
+          {
+            "at": [
+              0.2511,
+              0.2783
+            ],
+            "value": "3,25 m",
+            "note": "hasta el fondo del clóset"
+          },
+          {
+            "at": [
+              0.5598,
+              0.4378
+            ],
+            "value": "1,98 m"
+          }
+        ]
+      }
+    },
+    {
+      "src": "fotos/mateo/foto-5.jpg",
+      "title": "Puerta y nicho del clóset",
+      "measures": [
+        "0,73 m: puerta",
+        "0,07 m: muro entre puerta y nicho",
+        "1,17 m: ancho del nicho",
+        "0,61 m: fondo del nicho",
+        "1,75 m: altura del muro bajo"
+      ],
+      "overlay": {
+        "lines": [
+          {
+            "a": [
+              0.4912,
+              0.2883
+            ],
+            "b": [
+              0.747,
+              0.2883
+            ]
+          },
+          {
+            "a": [
+              0.1614,
+              0.2425
+            ],
+            "b": [
+              0.4171,
+              0.2425
+            ]
+          },
+          {
+            "a": [
+              0.4596,
+              0.4877
+            ],
+            "b": [
+              0.5,
+              0.4877
+            ]
+          },
+          {
+            "a": [
+              0.8722,
+              0.2425
+            ],
+            "b": [
+              0.8497,
+              0.995
+            ]
+          },
+          {
+            "a": [
+              0.4142,
+              0.0521
+            ],
+            "b": [
+              0.4912,
+              0.1105
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "at": [
+              0.6175,
+              0.3342
+            ],
+            "value": "1,17 m"
+          },
+          {
+            "at": [
+              0.2876,
+              0.2883
+            ],
+            "value": "0,73 m"
+          },
+          {
+            "at": [
+              0.4798,
+              0.5564
+            ],
+            "value": "0,07 m"
+          },
+          {
+            "at": [
+              0.8091,
+              0.5118
+            ],
+            "value": "1,75 m",
+            "note": "altura hasta el suelo"
+          },
+          {
+            "at": [
+              0.5405,
+              0.1451
+            ],
+            "value": "0,61 m",
+            "note": "profundidad del hueco del clóset"
+          }
+        ]
+      }
+    },
+    {
+      "src": "fotos/mateo/foto-6.jpg",
+      "title": "Muro de la puerta",
+      "measures": [
+        "1,98 m: ancho",
+        "2,50 m: largo de la zona principal",
+        "0,70 m: vano de la puerta"
+      ],
+      "overlay": {
+        "lines": [
+          {
+            "a": [
+              0.2606,
+              0.3491
+            ],
+            "b": [
+              0.7687,
+              0.4412
+            ]
+          },
+          {
+            "a": [
+              0.7875,
+              0.137
+            ],
+            "b": [
+              0.995,
+              0.1617
+            ]
+          },
+          {
+            "a": [
+              0.005,
+              0.2321
+            ],
+            "b": [
+              0.249,
+              0.2152
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "at": [
+              0.4512,
+              0.2817
+            ],
+            "value": "2,5 m"
+          },
+          {
+            "at": [
+              0.9032,
+              0.1932
+            ],
+            "value": "0,7 m",
+            "note": "puerta"
+          },
+          {
+            "at": [
+              0.1061,
+              0.2965
+            ],
+            "value": "1,98 m"
+          }
+        ]
+      }
+    },
+    {
+      "src": "fotos/mateo/foto-7.jpg",
+      "title": "Muro bajo del clóset",
+      "measures": [
+        "3,25 m: largo hasta el fondo del clóset",
+        "1,75 m: altura del muro bajo"
+      ],
+      "overlay": {
+        "lines": [
+          {
+            "a": [
+              0.005,
+              0.33
+            ],
+            "b": [
+              0.9321,
+              0.3523
+            ]
+          },
+          {
+            "a": [
+              0.9195,
+              0.3194
+            ],
+            "b": [
+              0.9321,
+              0.995
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "at": [
+              0.4929,
+              0.2543
+            ],
+            "value": "3,25 m",
+            "note": "hasta el fondo del clóset"
+          },
+          {
+            "at": [
+              0.8564,
+              0.5887
+            ],
+            "value": "1,75 m",
+            "note": "altura hasta el suelo"
+          }
+        ]
+      }
+    }
+  ],
+  "measures": [
+    {
+      "label": "Ancho",
+      "value": "1,98 m",
+      "source": "Láminas 4 y 6"
+    },
+    {
+      "label": "Largo de la zona principal",
+      "value": "2,50 m",
+      "source": "Lámina 6"
+    },
+    {
+      "label": "Largo hasta el fondo del nicho",
+      "value": "3,25 m",
+      "source": "Láminas 4 y 7"
+    },
+    {
+      "label": "Altura del muro bajo",
+      "value": "1,75 m",
+      "source": "Láminas 4, 5 y 7"
+    },
+    {
+      "label": "Pendiente del cielo",
+      "value": "≈ 29,5° · 0,88 m en planta · tramo inclinado ≈ 1,01 m",
+      "source": "Estimada: alturas medidas (1,75 y 2,25 m) con el tramo de 1,00 m y el triángulo de 0,90 m en planta",
+      "estimated": true
+    },
+    {
+      "label": "Altura del cielo plano",
+      "value": "2,25 m",
+      "source": "Estimada: igual a la del matrimonial, que comparte el mismo techo",
+      "estimated": true
+    },
+    {
+      "label": "Nicho del clóset",
+      "value": "1,17 × 0,61 m",
+      "source": "Lámina 5"
+    },
+    {
+      "label": "Puerta",
+      "value": "0,73 m",
+      "source": "Lámina 5"
+    },
+    {
+      "label": "Ventana",
+      "value": "1,20 m, a 10 cm del muro de la puerta",
+      "source": "Medido"
+    },
+    {
+      "label": "Ventana: alféizar y dintel",
+      "value": "0,95 m · 2,00 m",
+      "source": "Sin medir",
+      "estimated": true
+    },
+    {
+      "label": "Colchón Zinus 2 plazas",
+      "value": "150 × 190 × 30 cm",
+      "source": "Ficha publicada en Chile"
+    },
+    {
+      "label": "Hojas del ropero",
+      "value": "55 a 60 cm (58,5 en el plano)",
+      "source": "Medido"
+    }
+  ],
+  "notes": [
+    "El ropero queda fijo en el nicho. Hay 14 cm por confirmar: 3,25 − 2,50 = 0,75 m, pero el hueco medido es 0,61 m.",
+    "Arcos punteados: apertura de la puerta y de las dos hojas del ropero. Se marcan en rojo si un mueble las bloquea.",
+    "La pendiente y la altura del cielo plano (2,25 m) se estiman iguales a las del matrimonial, que comparte el mismo techo: unos 29,5° y 0,88 m en planta.",
+    "El colchón se dibuja sobre una tarima ventilada de 12 cm, que es una propuesta."
+  ],
+  "detail": "detalle/vista-mateo-light.html",
+  "footMin": [
+    60,
+    50
+  ]
+}

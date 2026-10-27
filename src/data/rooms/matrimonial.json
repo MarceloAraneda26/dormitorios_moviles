@@ -1,0 +1,443 @@
+{
+  "id": "matrimonial",
+  "order": 1,
+  "name": "Habitación matrimonial",
+  "size": {
+    "w": 315,
+    "d": 325
+  },
+  "wallT": 8,
+  "ceiling": 225,
+  "slope": {
+    "side": "N",
+    "low": 175,
+    "run": 88
+  },
+  "walls": {
+    "N": "muro de la cabecera",
+    "S": "muro del TV",
+    "W": "muro de la ventana",
+    "E": "muro de la puerta"
+  },
+  "doors": [
+    {
+      "name": "Puerta",
+      "hinge": [
+        315,
+        325
+      ],
+      "width": 70,
+      "closed": [
+        0,
+        -1
+      ],
+      "open": [
+        -1,
+        0
+      ],
+      "height": 200,
+      "estimated": true
+    }
+  ],
+  "windows": [
+    {
+      "name": "Ventana",
+      "a": [
+        0,
+        90
+      ],
+      "b": [
+        0,
+        280
+      ],
+      "sill": 85,
+      "head": 205,
+      "estimated": true
+    }
+  ],
+  "fixed": [
+    {
+      "id": "convector",
+      "name": "el convector",
+      "kind": "heater",
+      "rect": {
+        "x": 1,
+        "y": 200,
+        "w": 10,
+        "d": 75
+      },
+      "height": 45
+    }
+  ],
+  "furniture": [
+    {
+      "id": "cama",
+      "type": "camaKing",
+      "cx": 157.5,
+      "cy": 104,
+      "rot": 0
+    },
+    {
+      "id": "vel1",
+      "type": "velador",
+      "name": "Velador 1",
+      "cx": 43,
+      "cy": 30,
+      "rot": 0
+    },
+    {
+      "id": "vel2",
+      "type": "velador",
+      "name": "Velador 2",
+      "cx": 272,
+      "cy": 30,
+      "rot": 0
+    },
+    {
+      "id": "apar",
+      "type": "aparador",
+      "cx": 185,
+      "cy": 300,
+      "rot": 0,
+      "d": 50
+    },
+    {
+      "id": "calef",
+      "type": "calefactor",
+      "cx": 91,
+      "cy": 314,
+      "rot": 0
+    },
+    {
+      "id": "est",
+      "type": "estante",
+      "name": "Estante angosto (móvil)",
+      "cx": 20,
+      "cy": 45,
+      "rot": 90,
+      "on": false
+    }
+  ],
+  "photos": [
+    {
+      "src": "fotos/matrimonial/foto-1.jpg",
+      "title": "Vista hacia la cabecera",
+      "measures": [
+        "3,15 m: ancho del muro de la cabecera",
+        "2,55 m: muro de la puerta, de la esquina al vano",
+        "0,70 m: puerta",
+        "1,75 m: altura junto a la cabecera"
+      ],
+      "overlay": {
+        "lines": [
+          {
+            "a": [
+              0.0097,
+              0.1252
+            ],
+            "b": [
+              0.5182,
+              0.1999
+            ]
+          },
+          {
+            "a": [
+              0.5277,
+              0.2114
+            ],
+            "b": [
+              0.9337,
+              0.2919
+            ]
+          },
+          {
+            "a": [
+              0.9024,
+              0.5757
+            ],
+            "b": [
+              0.995,
+              0.6249
+            ]
+          },
+          {
+            "a": [
+              0.0073,
+              0.0818
+            ],
+            "b": [
+              0.039,
+              0.8746
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "at": [
+              0.1837,
+              0.2308
+            ],
+            "value": "3,15 m"
+          },
+          {
+            "at": [
+              0.7017,
+              0.3171
+            ],
+            "value": "2,55 m"
+          },
+          {
+            "at": [
+              0.9549,
+              0.7127
+            ],
+            "value": "0,7 m",
+            "note": "puerta"
+          },
+          {
+            "at": [
+              0.0915,
+              0.3979
+            ],
+            "value": "1,75 m",
+            "note": "altura"
+          }
+        ]
+      }
+    },
+    {
+      "src": "fotos/matrimonial/foto-2.jpg",
+      "title": "Vista hacia la ventana",
+      "measures": [
+        "3,25 m: largo de la pieza",
+        "3,15 m: ancho",
+        "1,0 m: tramo inclinado del techo",
+        "0,9 m: de la ventana a la esquina de la cabecera"
+      ],
+      "overlay": {
+        "lines": [
+          {
+            "a": [
+              0.0393,
+              0.491
+            ],
+            "b": [
+              0.4902,
+              0.4095
+            ]
+          },
+          {
+            "a": [
+              0.4915,
+              0.2178
+            ],
+            "b": [
+              0.9223,
+              0.2776
+            ]
+          },
+          {
+            "a": [
+              0.4351,
+              0.0663
+            ],
+            "b": [
+              0.5096,
+              0.1995
+            ]
+          },
+          {
+            "a": [
+              0.4139,
+              0.2658
+            ],
+            "b": [
+              0.5,
+              0.2658
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "at": [
+              0.3043,
+              0.5424
+            ],
+            "value": "3,25 m"
+          },
+          {
+            "at": [
+              0.6655,
+              0.3235
+            ],
+            "value": "3,15 m"
+          },
+          {
+            "at": [
+              0.5225,
+              0.1065
+            ],
+            "value": "1,0 m"
+          },
+          {
+            "at": [
+              0.457,
+              0.313
+            ],
+            "value": "0,9 m"
+          }
+        ]
+      }
+    },
+    {
+      "src": "fotos/matrimonial/foto-3.jpg",
+      "title": "Vista hacia el TV",
+      "measures": [
+        "3,15 m: ancho del muro del TV",
+        "3,25 m: largo",
+        "0,70 m: puerta",
+        "2,25 m: altura del cielo plano"
+      ],
+      "overlay": {
+        "lines": [
+          {
+            "a": [
+              0.3705,
+              0.2576
+            ],
+            "b": [
+              0.7536,
+              0.2576
+            ]
+          },
+          {
+            "a": [
+              0.3494,
+              0.4018
+            ],
+            "b": [
+              0.4297,
+              0.4018
+            ]
+          },
+          {
+            "a": [
+              0.005,
+              0.0505
+            ],
+            "b": [
+              0.383,
+              0.2056
+            ]
+          },
+          {
+            "a": [
+              0.7536,
+              0.1643
+            ],
+            "b": [
+              0.7534,
+              0.896
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "at": [
+              0.4967,
+              0.3035
+            ],
+            "value": "3,15 m"
+          },
+          {
+            "at": [
+              0.3925,
+              0.458
+            ],
+            "value": "0,7 m",
+            "note": "puerta"
+          },
+          {
+            "at": [
+              0.1588,
+              0.198
+            ],
+            "value": "3,25 m"
+          },
+          {
+            "at": [
+              0.683,
+              0.6086
+            ],
+            "value": "2,25 m",
+            "note": "altura"
+          }
+        ]
+      }
+    }
+  ],
+  "measures": [
+    {
+      "label": "Ancho",
+      "value": "3,15 m",
+      "source": "Láminas 1, 2 y 3"
+    },
+    {
+      "label": "Largo",
+      "value": "3,25 m",
+      "source": "Láminas 2 y 3 (2,55 + 0,70 en la lámina 1)"
+    },
+    {
+      "label": "Altura junto a la cabecera",
+      "value": "1,75 m",
+      "source": "Lámina 1"
+    },
+    {
+      "label": "Altura del cielo plano",
+      "value": "2,25 m",
+      "source": "Lámina 3"
+    },
+    {
+      "label": "Pendiente del cielo",
+      "value": "≈ 29,5° · 0,88 m en planta · tramo inclinado ≈ 1,01 m",
+      "source": "Estimada: alturas medidas (1,75 y 2,25 m) con el tramo de 1,00 m y el triángulo de 0,90 m en planta",
+      "estimated": true
+    },
+    {
+      "label": "Puerta",
+      "value": "0,70 m",
+      "source": "Láminas 1 y 3"
+    },
+    {
+      "label": "Ventana: distancia a la esquina de la cabecera",
+      "value": "0,90 m",
+      "source": "Lámina 2"
+    },
+    {
+      "label": "Ventana: ancho, alféizar y dintel",
+      "value": "1,90 m · 0,85 m · 2,05 m",
+      "source": "Sin medir",
+      "estimated": true
+    },
+    {
+      "label": "Cama King",
+      "value": "180 × 200 × 69 cm",
+      "source": "Ficha del producto"
+    },
+    {
+      "label": "Aparador TV",
+      "value": "1,20 × 0,50 m",
+      "source": "Medido"
+    }
+  ],
+  "notes": [
+    "La franja morada marca el techo inclinado junto a la cabecera: unos 0,88 m en planta, con 0,50 m de subida (de 1,75 a 2,25 m).",
+    "El ancho de la ventana, su alféizar y su dintel, y el sentido de apertura de la puerta, son aproximados.",
+    "Las alturas de veladores, aparador, calefactor y estante son estimadas; solo se usan en la vista 3D.",
+    "El convector bajo la ventana está fijo; el resto de los muebles se puede mover."
+  ],
+  "footMin": [
+    75,
+    60
+  ]
+}
