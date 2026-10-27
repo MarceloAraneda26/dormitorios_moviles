@@ -134,7 +134,12 @@ export default function App() {
 
       {(tab === "plano" || tab === "3d") && (
         <div className="savebar">
-          <span className="muted">{dirty ? "Hay cambios sin guardar en el proyecto (quedan guardados en este navegador)." : "Distribución guardada en el proyecto."} {status}</span>
+          <span className="muted">
+            {!import.meta.env.DEV
+              ? dirty ? "Tus cambios quedan guardados solo en este navegador." : "Puedes mover y girar muebles: los cambios quedan solo en este navegador."
+              : dirty ? "Hay cambios sin guardar en el proyecto (quedan guardados en este navegador)." : "Distribución guardada en el proyecto."}{" "}
+            {status}
+          </span>
           {dirty && import.meta.env.DEV && <button className="primary" onClick={save}>Guardar en el proyecto</button>}
           {dirty && <button onClick={discard}>Volver a lo guardado</button>}
         </div>

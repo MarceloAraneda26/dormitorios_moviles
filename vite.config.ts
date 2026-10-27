@@ -39,7 +39,9 @@ function saveRooms(): Plugin {
   };
 }
 
-export default defineConfig({
+// En GitHub Pages el sitio vive en /dormitorios_moviles/; en desarrollo, en la raíz.
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/dormitorios_moviles/" : "/",
   plugins: [react(), saveRooms()],
   server: { port: 5173 },
-});
+}));
