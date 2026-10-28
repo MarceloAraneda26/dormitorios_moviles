@@ -1,7 +1,8 @@
-import { useRef, type PointerEvent, type KeyboardEvent, type ReactNode } from "react";
+import { useEffect, useRef, type PointerEvent, type KeyboardEvent, type ReactNode } from "react";
 import { CATALOG } from "../model/catalog";
 import { boxOf, clamp, cm, conflicts, gaps, itemSize, level, m, present, rotate, snapWalls } from "../model/geometry";
 import type { Placed, Room } from "../model/types";
+import { useNarrow } from "../useNarrow";
 
 interface Props {
   room: Room;
@@ -111,6 +112,15 @@ function Furniture({ it }: { it: Placed }) {
 
 export default function PlanView({ room, furniture, selected, onSelect, onChange }: Props) {
   const svg = useRef<SVGSVGElement>(null);
+  const narrow = useNarrow();
+  // Al tocar un mueble no se desplaza la página (así se puede arrastrar); fuera de los muebles, sí.
+  useEffect(() => {
+    const el = svg.current;
+    if (!el) return;
+    const stop = (e: TouchEvent) => { if ((e.target as Element).closest?.(".item")) e.preventDefault(); };
+    el.addEventListener("touchstart", stop, { passive: false });
+    return () => el.removeEventListener("touchstart", stop);
+  }, []);
   const drag = useRef<{ id: string; dx: number; dy: number } | null>(null);
   const W = room.size.w, H = room.size.d, wt = 7;
   const check = conflicts(room, furniture);
@@ -124,9 +134,18 @@ export default function PlanView({ room, furniture, selected, onSelect, onChange
   };
   const update = (it: Placed) => onChange(furniture.map((x) => (x.id === it.id ? it : x)));
 
+  // Dos toques seguidos sobre el mismo mueble lo giran (el doble clic no es confiable en pantallas táctiles)
+  const lastTap = useRef<{ id: string; t: number } | null>(null);
   const down = (e: PointerEvent, it: Placed) => {
     e.stopPropagation();
     onSelect(it.id);
+    const now = performance.now();
+    if (lastTap.current?.id === it.id && now - lastTap.current.t < 350) {
+      lastTap.current = null;
+      update(rotate(room, it));
+      return;
+    }
+    lastTap.current = { id: it.id, t: now };
     const p = toPlan(e);
     drag.current = { id: it.id, dx: it.cx - p.x, dy: it.cy - p.y };
     svg.current!.setPointerCapture(e.pointerId);
@@ -161,8 +180,8 @@ export default function PlanView({ room, furniture, selected, onSelect, onChange
   return (
     <svg
       ref={svg}
-      viewBox={`-62 -54 ${W + 124} ${H + 112}`}
-      className="plan"
+      viewBox={narrow ? `-46 -54 ${W + 64} ${H + 112}` : `-62 -54 ${W + 124} ${H + 112}`}
+      className={"plan" + (narrow ? " narrow" : "")}
       tabIndex={0}
       role="application"
       aria-label={`Plano de ${room.name} con muebles movibles`}
@@ -252,7 +271,7 @@ export default function PlanView({ room, furniture, selected, onSelect, onChange
 
       <Dim x1={0} y1={-26} x2={W} y2={-26} label={m(W)} out />
       <Dim x1={-34} y1={0} x2={-34} y2={H} label={m(H)} out />
-      {(["N", "S", "E", "W"] as const).map((side) => {
+      {(narrow ? (["N", "S"] as const) : (["N", "S", "E", "W"] as const)).map((side) => {
         const low = s?.side === side;
         const label = room.walls[side] + (low ? ` · techo bajo, ${m(s!.low)} en el muro` : "");
         const pos = { N: { x: W / 2, y: -44, rot: 0 }, S: { x: W / 2, y: H + 24, rot: 0 }, E: { x: W + 18, y: H / 2, rot: 90 }, W: { x: -52, y: H / 2, rot: -90 } }[side];

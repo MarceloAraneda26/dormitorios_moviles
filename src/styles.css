@@ -108,7 +108,7 @@ code { font-size: .9em; background: var(--bg); padding: 1px 5px; border-radius: 
 .detail { width: 100%; height: 720px; border: 0; border-radius: 10px; background: var(--bg); }
 
 /* Plano */
-svg.plan { width: 100%; height: auto; display: block; touch-action: none; user-select: none; }
+svg.plan { width: 100%; height: auto; display: block; touch-action: pan-y pinch-zoom; user-select: none; -webkit-user-select: none; }
 svg.plan:focus { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
 .s-wall { fill: var(--wall); }
 .s-floor { fill: var(--floor); }
@@ -127,7 +127,7 @@ svg.plan:focus { outline: 2px solid var(--accent); outline-offset: 4px; border-r
 .s-arc.bad { stroke: var(--bad); stroke-width: 1.4; }
 .s-dim { stroke: var(--dim); stroke-width: .7; }
 .s-dim.ok { stroke: var(--ok); } .s-dim.warn { stroke: var(--warn); } .s-dim.bad { stroke: var(--bad); }
-.item { cursor: grab; }
+.item { cursor: grab; touch-action: none; }
 .s-sel { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 5 3; }
 .s-hit { fill: none; stroke: var(--bad); stroke-width: 2; }
 .t { font-size: 10px; fill: var(--fg); text-anchor: middle; dominant-baseline: middle; paint-order: stroke; stroke: var(--floor); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
@@ -137,3 +137,33 @@ svg.plan:focus { outline: 2px solid var(--accent); outline-offset: 4px; border-r
 .t.ok { fill: var(--ok); } .t.warn { fill: var(--warn); } .t.bad { fill: var(--bad); }
 .t.sl { fill: var(--slope); }
 .t.mut { fill: var(--muted); }
+
+/* Barra sobre el plano: mueble seleccionado y botón para girarlo */
+.plan-bar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; min-height: 40px; margin-bottom: 8px; }
+.plan-bar .sel-name { margin-right: auto; }
+.plan-bar button { min-height: 40px; }
+
+/* Celular */
+@media (max-width: 640px) {
+  .wrap { padding: 14px 12px 40px; }
+  .top h1 { font-size: 1.35rem; }
+  .card { padding: 12px; border-radius: 12px; }
+  .tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -12px 12px; padding: 0 12px; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs a { flex: 0 0 auto; padding: 8px 14px; }
+  button, select { min-height: 40px; }
+  svg.plan.narrow .t { font-size: 12px; }
+  svg.plan.narrow .t.sm { font-size: 10px; }
+  .iso-wrap .row { flex-wrap: nowrap; gap: 6px; }
+  .iso-wrap .row .muted { flex: 1; text-align: center; font-size: .78rem; }
+  .iso-wrap .row button { padding: 6px 10px; white-space: nowrap; }
+  .photos { grid-template-columns: 1fr; }
+  .photos-bar { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .lightbox { padding: 8px; }
+  .lightbox img { max-height: calc(100vh - 170px); }
+  .lightbox-bar span { flex-basis: 100%; order: -1; font-size: .85rem; }
+  .measures { font-size: .85rem; }
+  .measures th, .measures td { padding: 6px; }
+  .rooms { grid-template-columns: 1fr; }
+  .detail { height: 520px; }
+}

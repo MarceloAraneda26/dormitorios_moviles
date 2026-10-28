@@ -41,18 +41,20 @@ export function snapWalls(room: Room, it: Placed): Placed {
   return out;
 }
 
-// Al cambiar una medida, el mueble sigue apoyado en los muros que tocaba
-export function resize(room: Room, it: Placed, key: "w" | "d", value: number): Placed {
-  const b = boxOf(it);
+// Al cambiar una medida o girar, el mueble sigue apoyado en los muros que tocaba
+function keepWalls(room: Room, before: Placed, next: Placed): Placed {
+  const b = boxOf(before);
   const touch = { W: b.x0 < 0.5, E: b.x1 > room.size.w - 0.5, N: b.y0 < 0.5, S: b.y1 > room.size.d - 0.5 };
-  const next: Placed = { ...it, [key]: value };
-  const f = footprint(next);
-  if (touch.W) next.cx = f.w / 2; else if (touch.E) next.cx = room.size.w - f.w / 2;
-  if (touch.N) next.cy = f.h / 2; else if (touch.S) next.cy = room.size.d - f.h / 2;
-  return clamp(room, next);
+  const out = { ...next };
+  const f = footprint(out);
+  if (touch.W) out.cx = f.w / 2; else if (touch.E) out.cx = room.size.w - f.w / 2;
+  if (touch.N) out.cy = f.h / 2; else if (touch.S) out.cy = room.size.d - f.h / 2;
+  return clamp(room, out);
 }
 
-export const rotate = (room: Room, it: Placed): Placed => clamp(room, { ...it, rot: (((it.rot + 90) % 360) as Rot) });
+export const resize = (room: Room, it: Placed, key: "w" | "d", value: number): Placed => keepWalls(room, it, { ...it, [key]: value });
+
+export const rotate = (room: Room, it: Placed): Placed => keepWalls(room, it, { ...it, rot: (((it.rot + 90) % 360) as Rot) });
 
 const overlaps = (a: Box, b: Box, tol = 0.5) => a.x0 < b.x1 - tol && b.x0 < a.x1 - tol && a.y0 < b.y1 - tol && b.y0 < a.y1 - tol;
 function circleHits(c: [number, number], r: number, b: Box) {

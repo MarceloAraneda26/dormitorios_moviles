@@ -4,7 +4,7 @@ import Measures, { toMeasure } from "./components/Measures";
 import Photos from "./components/Photos";
 import PlanPanel from "./components/PlanPanel";
 import PlanView from "./components/PlanView";
-import { m } from "./model/geometry";
+import { itemName, m, present, rotate } from "./model/geometry";
 import type { Placed, Room } from "./model/types";
 
 // Cada archivo de src/data/rooms es una pieza. Para agregar una pieza nueva basta con crear su JSON.
@@ -118,6 +118,7 @@ export default function App() {
   };
   const discard = () => setDrafts((d) => { const next = { ...d }; delete next[room.id]; return next; });
   const tabs = TABS.filter((t) => t.id !== "detalle" || room.detail);
+  const selectedItem = present(furniture).find((x) => x.id === selected);
 
   return (
     <div className="wrap">
@@ -148,7 +149,18 @@ export default function App() {
       {tab === "plano" && (
         <div className="grid">
           <div className="card">
-            <p className="muted small">Arrastra un mueble para moverlo. Doble clic o la tecla R lo gira 90°. Con las flechas lo mueves de a 1 cm (con Mayús, de a 10 cm).</p>
+            <p className="muted small">Arrastra un mueble para moverlo. Para girarlo 90°, tócalo dos veces o usa el botón Girar. En computador, también con la tecla R y las flechas.</p>
+            <div className="plan-bar">
+              {selectedItem ? (
+                <>
+                  <span className="sel-name">{itemName(selectedItem)}</span>
+                  <button className="primary" onClick={() => setFurniture(furniture.map((x) => (x.id === selectedItem.id ? rotate(room, x) : x)))}>Girar 90°</button>
+                  <button onClick={() => setSelected(null)}>Listo</button>
+                </>
+              ) : (
+                <span className="muted small">Toca un mueble para seleccionarlo.</span>
+              )}
+            </div>
             <PlanView room={room} furniture={furniture} selected={selected} onSelect={setSelected} onChange={setFurniture} />
           </div>
           <PlanPanel room={room} furniture={furniture} selected={selected} onSelect={setSelected} onChange={setFurniture} />
